@@ -62,6 +62,7 @@ export class UsersService implements OnModuleInit {
   queryUsers(
     paginationDtoStream: Observable<PaginationDto>,
   ): Observable<Users> {
+    //Here, you are creating a new instance of an RxJS Subject. A Subject is a type of observable that acts as both an observer and an observable. It can emit values to multiple subscribers, making it useful for broadcasting events or data.
     const subject = new Subject<Users>();
 
     const onNext = (paginationDto: PaginationDto) => {
